@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ES</title>
+    <defs>
+        <circle id="path-1" cx="13.5" cy="13.5" r="13.5"></circle>
+        <rect id="path-3" x="0" y="0" width="37.8947368" height="27" rx="2"></rect>
+    </defs>
+    <g id="Insta.Lingue-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1-Homepage" transform="translate(-944.000000, -146.000000)">
+            <g id="Group-25" transform="translate(569.000000, 110.000000)">
+                <g id="Group-2" transform="translate(0.000000, 6.000000)">
+                    <g id="Group-4" transform="translate(0.000000, 33.000000)">
+                        <g id="Group-53" transform="translate(284.000000, 0.000000)">
+                            <g id="ES" transform="translate(94.000000, 0.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <circle stroke="#FFFFFF" stroke-width="3" cx="13.5" cy="13.5" r="15"></circle>
+                                <g id="Group" mask="url(#mask-2)">
+                                    <g transform="translate(-5.684211, 0.000000)" id="ES">
+                                        <mask id="mask-4" fill="white">
+                                            <use xlink:href="#path-3"></use>
+                                        </mask>
+                                        <use id="Mask" fill="#FFFFFF" xlink:href="#path-3"></use>
+                                        <rect id="Rectangle-2" fill="#DD172C" mask="url(#mask-4)" x="0" y="0" width="37.8947368" height="7.2"></rect>
+                                        <rect id="Rectangle-2" fill="#DD172C" mask="url(#mask-4)" x="0" y="19.8" width="37.8947368" height="7.2"></rect>
+                                        <rect id="Rectangle-2" fill="#FFD133" mask="url(#mask-4)" x="0" y="7.2" width="37.8947368" height="12.6"></rect>
+                                        <polygon id="Rectangle-139-Copy" fill="#FFEDB1" mask="url(#mask-4)" points="9.92481203 12.6 11.7293233 12.6 11.7293233 13.5 9.92481203 13.5"></polygon>
+                                        <path d="M11.2117779,12.0913172 L11.5062388,15.7627304 C11.4766511,16.0368665 11.3410976,16.2835241 11.1469663,16.4641184 C10.9477857,16.6494098 10.6853535,16.7666667 10.4059496,16.7666667 L10.4059496,16.7666667 L9.44367445,16.7666667 C9.1633933,16.7666667 8.90125588,16.649763 8.70249564,16.4648626 C8.50219828,16.2785322 8.36471809,16.0217761 8.34096215,15.7374175 L8.34096215,15.7374175 L8.08203556,12.6380662 L11.2117779,12.0913172 Z" id="Rectangle-137" stroke="#A41517" stroke-width="0.666666667" mask="url(#mask-4)"></path>
+                                        <polygon id="Rectangle-139" fill="#A41517" mask="url(#mask-4)" points="8.12030075 13.5 11.7293233 13.5 11.7293233 14.4 10.8270677 14.4 9.92481203 16.2 9.02255639 14.4 8.12030075 14.4"></polygon>
+                                        <rect id="Rectangle-135" fill="#A41517" mask="url(#mask-4)" x="5.41353383" y="10.8" width="1.80451128" height="6.3"></rect>
+                                        <rect id="Rectangle-135-Copy" fill="#A41517" mask="url(#mask-4)" x="12.6315789" y="10.8" width="1.80451128" height="6.3"></rect>
+                                        <path d="M8.12030075,9.9 C8.12030075,9.40294373 8.52031866,9 9.0124189,9 L10.8372052,9 C11.3299084,9 11.7293233,9.39947834 11.7293233,9.9 L11.7293233,10.4698523 C11.7293233,10.6521878 11.5742481,10.8 11.3962641,10.8 L8.45335996,10.8 C8.26941644,10.8 8.12030075,10.658757 8.12030075,10.4698523 L8.12030075,9.9 Z" id="Rectangle-138" fill="#A41517" mask="url(#mask-4)"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  background: url("../media/bg1.svg"), url("../media/bg2.svg"),
+    url("../media/bg3.svg");
+  overflow-x: hidden;
+  background-size:
+    1920px,
+    2800px 1800px,
+    3000px;
+  background-position:
+    left -130px top -280px,
+    left -1000px top 1250px,
+    right -90px bottom -330px;
+  background-repeat: no-repeat;
+
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8eaf6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a57fe;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #293a9f;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.underlined {
+  position: relative;
+  margin-right: 1rem;
+}
+.underlined:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 7px;
+  width: 100%;
+  border: solid 3px #3452fe;
+  border-color: #3452fe transparent transparent transparent;
+  border-radius: 50%;
+}
+.small {
+  font-size: 60%;
+}
+.big {
+  font-size: 200%;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>PL</title>
+    <defs>
+        <circle id="path-1" cx="13.5" cy="13.5" r="13.5"></circle>
+        <rect id="path-3" x="0" y="0" width="37.8947368" height="27" rx="2"></rect>
+    </defs>
+    <g id="Insta.Lingue-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1-Homepage" transform="translate(-1038.000000, -146.000000)">
+            <g id="Group-25" transform="translate(569.000000, 110.000000)">
+                <g id="Group-2" transform="translate(0.000000, 6.000000)">
+                    <g id="Group-4" transform="translate(0.000000, 33.000000)">
+                        <g id="Group-53" transform="translate(284.000000, 0.000000)">
+                            <g id="PL" transform="translate(188.000000, 0.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <circle stroke="#FFFFFF" stroke-width="3" cx="13.5" cy="13.5" r="15"></circle>
+                                <g id="Group" mask="url(#mask-2)">
+                                    <g transform="translate(-5.684211, 0.000000)" id="PL">
+                                        <mask id="mask-4" fill="white">
+                                            <use xlink:href="#path-3"></use>
+                                        </mask>
+                                        <rect stroke="#F5F5F5" stroke-width="0.5" x="0.25" y="0.25" width="37.3947368" height="26.5" rx="2"></rect>
+                                        <rect id="Rectangle-2" fill="#EB2A50" mask="url(#mask-4)" x="0" y="12.3157895" width="37.8947368" height="14.6842105"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

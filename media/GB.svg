@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>GB</title>
+    <defs>
+        <circle id="path-1" cx="13.5" cy="13.5" r="13.5"></circle>
+        <rect id="path-3" x="0" y="0" width="37.8947368" height="27" rx="2"></rect>
+    </defs>
+    <g id="Insta.Lingue-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1-Homepage" transform="translate(-850.000000, -146.000000)">
+            <g id="Group-25" transform="translate(569.000000, 110.000000)">
+                <g id="Group-2" transform="translate(0.000000, 6.000000)">
+                    <g id="Group-4" transform="translate(0.000000, 33.000000)">
+                        <g id="GB" transform="translate(284.000000, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <circle stroke="#FFFFFF" stroke-width="3" cx="13.5" cy="13.5" r="15"></circle>
+                            <g id="Group" mask="url(#mask-2)">
+                                <g transform="translate(-5.684211, 0.000000)" id="GB">
+                                    <mask id="mask-4" fill="white">
+                                        <use xlink:href="#path-3"></use>
+                                    </mask>
+                                    <use id="Mask" fill="#FFFFFF" xlink:href="#path-3"></use>
+                                    <rect id="Mask-Copy" fill="#0A17A7" mask="url(#mask-4)" x="0" y="0" width="37.8947368" height="27"></rect>
+                                    <path d="M39.6629004,-2.36842105 L41.6842105,0.61946488 L28.8765263,9.23157895 L37.9245013,9.23179005 L37.9245013,18.2418942 L28.8775263,18.2415789 L41.6842105,26.8542193 L39.6629004,29.8421053 L23.4655263,18.9485789 L23.4657334,29.0540191 L14.4290035,29.0540191 L14.4285263,18.9485789 L-1.76816359,29.8421053 L-3.78947368,26.8542193 L9.01652632,18.2415789 L-0.0297644197,18.2418942 L-0.0297644197,9.23179005 L9.01752632,9.23157895 L-3.78947368,0.61946488 L-1.76816359,-2.36842105 L14.4285263,8.52457895 L14.4290035,-1.58033487 L23.4657334,-1.58033487 L23.4655263,8.52457895 L39.6629004,-2.36842105 Z" id="Rectangle-2" fill="#FFFFFF" mask="url(#mask-4)"></path>
+                                    <line x1="25.1052632" y1="8.52631579" x2="42.1578947" y2="-2.84210526" id="Line" stroke="#DB1F35" stroke-width="0.666666667" stroke-linecap="round" mask="url(#mask-4)"></line>
+                                    <line x1="27" y1="28.8947368" x2="42.1578947" y2="18.4736842" id="Line-Copy-2" stroke="#DB1F35" stroke-width="0.666666667" stroke-linecap="round" mask="url(#mask-4)" transform="translate(34.578947, 23.684211) scale(1, -1) translate(-34.578947, -23.684211) "></line>
+                                    <line x1="10.8947368" y1="8.52631579" x2="-5.21052632" y2="-2.36842105" id="Line-Copy" stroke="#DB1F35" stroke-width="0.666666667" stroke-linecap="round" mask="url(#mask-4)"></line>
+                                    <line x1="12.7894737" y1="30.3157895" x2="-5.21052632" y2="18.4736842" id="Line-Copy-3" stroke="#DB1F35" stroke-width="0.666666667" stroke-linecap="round" mask="url(#mask-4)" transform="translate(3.789474, 24.394737) scale(1, -1) translate(-3.789474, -24.394737) "></line>
+                                    <polygon id="Rectangle-2-Copy-3" fill="#E6273E" mask="url(#mask-4)" points="0 16.2 16.2406015 16.2 16.2406015 27 21.6541353 27 21.6541353 16.2 37.8947368 16.2 37.8947368 10.8 21.6541353 10.8 21.6541353 0 16.2406015 0 16.2406015 10.8 0 10.8"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
