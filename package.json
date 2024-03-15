@@ -32,7 +32,7 @@
     "@react-email/components": "0.0.15",
     "@react-email/render": "0.0.12",
     "@sentry/nextjs": "^7.106.0",
-    "@stripe/stripe-js": "^3.0.7",
+    "@stripe/stripe-js": "^3.0.10",
     "@tanstack/react-table": "^8.13.2",
     "@types/bcryptjs": "^2.4.6",
     "@upstash/redis": "^1.28.4",
