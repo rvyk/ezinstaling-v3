@@ -81,3 +81,10 @@ export const reportSchema = z.object({
     .max(200, "Opis jest za długi"),
   captcha: z.string().min(1, "Captcha jest wymagana"),
 });
+
+export const AddInstalingSchema = z.object({
+  login: z.string().min(1, {
+    message: "Login jest wymagany",
+  }),
+  password: z.string().min(1, "Podaj hasło"),
+});

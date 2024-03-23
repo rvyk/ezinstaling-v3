@@ -9,9 +9,10 @@ export const GET = async (req: Request) => {
   const session = await currentUser();
   if (!session) return new NextResponse("Unauthorized", { status: 401 });
   try {
-    if (typeof session?.instaling?.selectedAccount === "number") {
-      const selectedAccount =
-        session.instaling.accounts[session.instaling.selectedAccount];
+    const selectedAccount = session?.instaling?.accounts.find(
+      (account) => account.login === session.instaling?.selectedAccount,
+    );
+    if (selectedAccount) {
       if (selectedAccount.inProgress)
         return new NextResponse(
           JSON.stringify({ success: true, state: "inprogress" }),
@@ -38,7 +39,7 @@ export const GET = async (req: Request) => {
         const instalingStudent = await loginProvider.authenticate();
         await db.instalingData.update({
           where: {
-            id: session.instaling.id,
+            id: session.instaling?.id,
           },
           data: {
             accounts: {
@@ -72,10 +73,10 @@ export const GET = async (req: Request) => {
           accounts: {
             updateMany: {
               where: {
-                login:
-                  session?.instaling?.accounts[
-                    session.instaling.selectedAccount
-                  ].login,
+                login: session?.instaling?.accounts.find(
+                  (account) =>
+                    account.login === session.instaling?.selectedAccount,
+                )?.login,
               },
               data: { lastSession: null },
             },

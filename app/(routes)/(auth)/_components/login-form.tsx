@@ -71,10 +71,12 @@ const LoginForm = () => {
       <div className="container mx-auto grid h-full place-items-center gap-10 px-8">
         <Title
           title="Zaloguj się"
-          desc=<>
-            Miło Cię znów&nbsp;
-            <span className="font-semibold text-[#565656]">widzieć!</span>
-          </>
+          desc={
+            <>
+              Miło znów Cię
+              <span className="font-semibold text-[#565656]"> widzieć!</span>
+            </>
+          }
         />
         <div
           data-aos="fade-up"

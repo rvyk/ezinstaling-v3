@@ -7,6 +7,10 @@ import {
 } from "@radix-ui/react-icons";
 import * as React from "react";
 
+import {
+  addAccount,
+  updateSelectedAccount,
+} from "@/actions/instaling/accounts";
 import { SettingsContext } from "@/app/context";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,24 +31,30 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useCurrentUser } from "@/hooks/auth";
 import { cn } from "@/lib/utils";
+import { AddInstalingSchema } from "@/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { usePathname } from "next/navigation";
-import { useContext } from "react";
+import { useContext, useEffect, useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { FormError } from "../../(auth)/_components/ui/form-error";
+import { FormSuccess } from "../../(auth)/_components/ui/form-success";
 
 type Team = { id: number; label: string };
 
@@ -56,7 +66,8 @@ interface TeamSwitcherProps extends PopoverTriggerProps {}
 
 export const AccountSwitcher = ({ className }: TeamSwitcherProps) => {
   const user = useCurrentUser();
-  const { instalingAccounts } = useContext(SettingsContext);
+  const { instalingAccounts, updateInstalingAccounts } =
+    useContext(SettingsContext);
   const groups = [
     {
       label: "Dodane konta",
@@ -70,21 +81,53 @@ export const AccountSwitcher = ({ className }: TeamSwitcherProps) => {
   const [open, setOpen] = React.useState(false);
   const [showNewUserDialog, setShowNewUserDialog] = React.useState(false);
   const [selectedTeam, setSelectedTeam] = React.useState<Team>(
-    groups[0].teams[user?.instaling?.selectedAccount ?? 0] || {
-      id: 0,
+    groups[0].teams.find(
+      (account) => account.label === user?.instaling?.selectedAccount,
+    ) || {
+      id: -1337,
       label: "Brak kont",
     },
   );
+
+  useEffect(() => {
+    updateSelectedAccount(selectedTeam.label);
+  }, [selectedTeam]);
+
   const pathname = usePathname();
+
+  const [error, setError] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
+  const [isPending, startTransition] = useTransition();
+
+  const form = useForm<z.infer<typeof AddInstalingSchema>>({
+    resolver: zodResolver(AddInstalingSchema),
+    defaultValues: {
+      login: "",
+      password: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof AddInstalingSchema>) {
+    setError("");
+    setSuccess("");
+
+    startTransition(() => {
+      addAccount(values.login, values.password)
+        .then((data) => {
+          form.reset();
+          updateInstalingAccounts();
+          if (selectedTeam.id == -1337)
+            setSelectedTeam({ id: 0, label: values.login });
+          setSuccess("Konto dodane pomyślnie");
+        })
+        .catch((e) => setError(e.message ?? "Coś poszło nie tak :c"));
+    });
+  }
 
   if (pathname !== "/dashboard/instaling") return null;
 
   return (
-    <Dialog
-      open={showNewUserDialog}
-      onOpenChange={setShowNewUserDialog}
-      data-disabled={null}
-    >
+    <Dialog open={showNewUserDialog} onOpenChange={setShowNewUserDialog}>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
@@ -153,46 +196,66 @@ export const AccountSwitcher = ({ className }: TeamSwitcherProps) => {
       </Popover>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create team</DialogTitle>
-          <DialogDescription>
-            Add a new team to manage products and customers.
-          </DialogDescription>
+          <DialogTitle>Dodaj konto</DialogTitle>
+          <DialogDescription>Dodaj nowe konto Instaling.</DialogDescription>
         </DialogHeader>
-        <div>
-          <div className="space-y-4 py-2 pb-4">
+        <Form {...form}>
+          <div className="space-y-4 py-2">
             <div className="space-y-2">
-              <Label htmlFor="name">Team name</Label>
-              <Input id="name" placeholder="Acme Inc." />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="plan">Subscription plan</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a plan" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="free">
-                    <span className="font-medium">Free</span> -{" "}
-                    <span className="text-muted-foreground">
-                      Trial for two weeks
-                    </span>
-                  </SelectItem>
-                  <SelectItem value="pro">
-                    <span className="font-medium">Pro</span> -{" "}
-                    <span className="text-muted-foreground">
-                      $9/month per user
-                    </span>
-                  </SelectItem>
-                </SelectContent>
-              </Select>
+              <FormField
+                control={form.control}
+                name="login"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Login</FormLabel>
+                    <FormControl>
+                      <Input type="text" placeholder="1lo2137" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Hasło</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="password"
+                        placeholder="********"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
           </div>
-        </div>
+          <FormError message={error} />
+          <FormSuccess message={success} />
+        </Form>
         <DialogFooter>
-          <Button variant="outline" onClick={() => setShowNewUserDialog(false)}>
+          <Button
+            variant="outline"
+            onClick={() => {
+              setError("");
+              setSuccess("");
+              form.reset();
+              setShowNewUserDialog(false);
+            }}
+          >
             Cancel
           </Button>
-          <Button type="submit">Continue</Button>
+          <Button
+            type="submit"
+            disabled={isPending}
+            onClick={form.handleSubmit(onSubmit)}
+          >
+            Continue
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
