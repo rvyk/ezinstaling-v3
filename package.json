@@ -55,7 +55,7 @@
     "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-email": "2.1.0",
-    "react-hook-form": "^7.51.0",
+    "react-hook-form": "^7.51.2",
     "react-responsive": "^9.0.2",
     "react-spinners": "^0.13.8",
     "react-turnstile": "^1.1.3",
